@@ -1,3 +1,56 @@
+* {
+  box-sizing: border-box;
+  font-family: 'Ubuntu Light', 'Century Gothic', sans-serif;
+  margin: 0;
+  padding: 0;
+  color: #393939;
+  background-color: #FFF;
+}
+
+#container {
+  text-align:center;
+}
+
+#navbar {
+  display: flex;
+  justify-content: center;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  display: inline-block;
+  padding: 100px;
+}
+
+li a{
+  color: whitesmoke;
+  font-size: 1.2em;
+  padding: 4px 10px;
+  margin: 0px;
+  border-radius: 10px;
+  box-shadow: 0px 1px 6px 1px #181818;
+  text-shadow: 1px 1px 3px #181818;
+  text-decoration: none;
+  background: radial-gradient(circle, rgba(147,143,143,1) 16%, rgba(115,114,114,1) 78%);	
+}
+
 h1 {
-    color: red;
+    color: blue;
   }
+
+#CardContainer {
+  display:flex;
+  justify-content: center;
+  height:500px;
+  width: 500px;
+  background-color: #555;
+}
+
+#header {
+  text-align: center;
+  letter-spacing: .2em;
+  margin-bottom: 10px;
+}
+
