@@ -2,6 +2,11 @@ const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
+  entry: ["regenerator-runtime/runtime.js", 
+    "./src/index.js"],
+  optimization: {
+      runtimeChunk: 'single'
+  },
   output: {
     path: path.join(__dirname, "/dist"), // the bundle output path
     filename: "bundle.js", // the name of the bundle

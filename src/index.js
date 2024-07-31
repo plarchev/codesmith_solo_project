@@ -1,8 +1,9 @@
 import React from "react";
-import ReactDOM from "react-dom";
 import App from "./App";
 import "./App.scss";
+import { createRoot } from 'react-dom/client';
 
 const el = document.getElementById("app");
 
-ReactDOM.render(<App />, el);
+const root = createRoot(el); // createRoot(container!) if you use TypeScript
+root.render(<App tab="home" />);

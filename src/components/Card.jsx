@@ -8,11 +8,12 @@
  *
  * ************************************
  */
-import React from 'react';
+import React, {useState, setState} from 'react';
 
-const Card = () => {
+const Card = ({transcript}) => {
     return (
-        <div className = "Card">
+        <div id = "Card">
+            <p id = 'recording-transcript'> {transcript} </p>
         </div>
     )
 }
