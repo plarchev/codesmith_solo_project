@@ -1,0 +1,13 @@
+@font-face {
+    font-family: 'Myfont';
+    src: url('Users/peter/Downloads/Myfont-Regular.ttf/Myfont-Regular.eot');
+    src: url('Users/peter/Downloads/Myfont-Regular.ttf/Myfont-Regular.eot?#iefix') format('embedded-opentype'),
+        url('Users/peter/Downloads/Myfont-Regular.ttf/Myfont-Regular.woff2') format('woff2'),
+        url('Users/peter/Downloads/Myfont-Regular.ttf/Myfont-Regular.woff') format('woff'),
+        url('Users/peter/Downloads/Myfont-Regular.ttf/Myfont-Regular.ttf') format('truetype'),
+        url('Users/peter/Downloads/Myfont-Regular.ttf/Myfont-Regular.svg#Myfont-Regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+

@@ -4,12 +4,10 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 module.exports = {
   entry: ["regenerator-runtime/runtime.js", 
     "./src/index.js"],
-  optimization: {
-      runtimeChunk: 'single'
-  },
   output: {
-    path: path.join(__dirname, "/dist"), // the bundle output path
-    filename: "bundle.js", // the name of the bundle
+    path: path.join(__dirname, "dist"), // the bundle output path
+    filename: "[name].bundle.js", // the name of the bundle
+    publicPath: '/',
   },
   plugins: [
     new HtmlWebpackPlugin({
@@ -19,6 +17,9 @@ module.exports = {
   devServer: {
     port: 3000, // you can change the port
   },
+  optimization: {
+    runtimeChunk: 'single'
+  },
   module: {
     rules: [
       {
@@ -27,6 +28,30 @@ module.exports = {
         use: {
           loader: "babel-loader",
         },
+      },
+      { test: /\.eot$/, loader: 'url-loader',
+          options: {
+            limit: 100000,
+            mimetype : 'application/vnd.ms-fontobject'
+        }
+      },
+      { test: /\.woff2$/, loader: 'url-loader',
+        options: {
+          limit: 100000,
+          mimetype : 'application/font-woff2'
+      }
+    },
+      { test: /\.woff$/, loader: 'url-loader',
+      options: {
+        limit: 100000,
+        mimetype : 'application/font-woff'
+      }
+      },
+     { test: /\.ttf$/, loader: 'url-loader',
+          options: {
+            limit: 100000,
+            mimetype : 'application/font-ttf'
+        }
       },
       {
         test: /\.(sa|sc|c)ss$/, // styles files

@@ -13,7 +13,7 @@ import React, {useState, setState} from 'react';
 const Card = ({transcript}) => {
     return (
         <div id = "Card">
-            <p id = 'recording-transcript'> {transcript} </p>
+            <p id = 'recording-transcript' > {transcript} </p>
         </div>
     )
 }

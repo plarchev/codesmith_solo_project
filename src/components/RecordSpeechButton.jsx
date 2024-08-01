@@ -10,12 +10,13 @@
  */
 
 import React from 'react';
-import SpeechRecognition, { useSpeechRecognition } from 'react-speech-recognition';
 
-const Dictaphone = ({listening, resetTranscript, handleClick, microphoneText, buttonStyle}) => {
+const Dictaphone = ({listening, resetTranscript, handleClick, microphoneText, buttonStyle, micOnStyle, micOffStyle}) => {
   return (
     <div>
-      <p>Microphone: {listening ? 'on' : 'off'}</p>
+      <div id = 'mic-icon-on' style = {micOnStyle}></div> 
+      <div id = 'mic-icon-off' style = {micOffStyle}></div> 
+      <div id = 'mic-text'>Microphone: {listening ? 'on' : 'off'}</div>
       <button className = 'recording' id = 'start-recording' onClick={handleClick} style = {buttonStyle}>
         {microphoneText}
       </button>

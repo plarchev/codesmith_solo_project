@@ -1,11 +1,45 @@
+@font-face {
+  font-family: 'handwriting';
+  src: url('fonts/handwriting.woff') format('woff');
+  src: url('fonts/handwriting.eot?iefix') format('embedded-opentype'),
+         url('fonts/handwriting.woff2') format('woff2'),
+         url('fonts/handwriting.woff') format('woff'),
+         url('fonts/handwriting.ttf') format('truetype'),
+         url('fonts/handwriting.svg') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+  
+}
+
+@font-face {
+  font-family: 'MyFont2';
+  src: url('fonts/transfonter/Users/peter/Downloads/Myfont-Regular.ttf/Myfont-Regular.eot');
+  src: url('fonts/transfonter/Users/peter/Downloads/Myfont-Regular.ttf/Myfont-Regular.eot?#iefix') format('embedded-opentype'),
+      url('fonts/transfonter/Users/peter/Downloads/Myfont-Regular.ttf/Myfont-Regular.woff2') format('woff2'),
+      url('fonts/transfonter/Users/peter/Downloads/Myfont-Regular.ttf/Myfont-Regular.woff') format('woff'),
+      url('fonts/transfonter/Users/peter/Downloads/Myfont-Regular.ttf/Myfont-Regular.ttf') format('truetype'),
+      url('fonts/transfonter/Users/peter/Downloads/Myfont-Regular.ttf/Myfont-Regular.svg#Myfont-Regular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'vendor';
+  src: url('https://static1.squarespace.com/static/5fcc32ac190b057dd3728887/t/5fcdd4a35d2e6f3bda5e7454/1607324836889/font.woff'); }
+
 * {
   box-sizing: border-box;
   font-family: 'Ubuntu Light', 'Century Gothic', sans-serif;
+  // font-family: "handwriting", "MyFont2", sans-serif;
+  // font-family: "MyFont";
   margin: 0;
   padding: 0;
   color: #393939;
   background-color: #FFF;
 }
+
 
 #container {
   text-align:center;
@@ -37,7 +71,9 @@ li a{
 }
 
 h1 {
+    font-family: 'MyFont';
     color: blue;
+    font-size: 100px;
   }
 
 #CardContainer {
@@ -58,13 +94,63 @@ h1 {
   width: 750px;
   border: 2px solid;
   background-color: #eee;
-  background-image: url("./images/birthday_card.jpg");
+  background-image: url("images/birthday_card.jpg");
   background-size:     cover;                      
   background-repeat:   no-repeat;
   background-position: center center;
 }
 
+#recording-transcript {
+  font-family: 'MyFont';
+  // font-family: "handwriting", "MyFont2", sans-serif;
+  // font-family: 'Ubuntu Light', 'Century Gothic', sans-serif;
+  display: flex;
+  color:black;
+  background-color: transparent;
+  justify-content: left;
+  align-self: left;
+  height:500px;
+  width: 340px;
+  margin-left: -342px;
+  font-size: 50px;
+}
+
+#mic-text {
+  margin-left: 35px;
+}
+
+#mic-icon-off {
+  position: absolute;
+  display:flex;
+  justify-content:center;
+  align-items: center;
+  top: 531px;
+  left: 1134px;
+  height:50px;
+  width: 50px;
+  margin-left: 80px;
+  background-image: url("images/microphone_off.jpg");
+  background-size:     cover;                      
+  background-repeat:   no-repeat;
+  background-position: center center;
+}
+
+#mic-icon-on {
+  display:flex;
+  justify-content:center;
+  align-items: center;
+  height:40px;
+  width: 40px;
+  margin-left: 80px;
+  background-image: url("images/microphone_on.jpg");
+  background-size:     cover;                      
+  background-repeat:   no-repeat;
+  background-position: center center;
+}
+
+
 .recording {
+  // font-family: 'MyFont';
   color: whitesmoke;
   font-size: 1.2em;
   padding: 4px 10px;
@@ -77,11 +163,6 @@ h1 {
   background: radial-gradient(circle, rgba(147,143,143,1) 16%, rgba(115,114,114,1) 78%);	
 }
 
-#recording-transcript {
-  display: flex;
-  background-color: transparent;
-  justify-content: left;
-}
 
 #header {
   text-align: center;
