@@ -8,12 +8,14 @@
  *
  * ************************************
  */
-import React, {useState, setState} from 'react';
+import React from 'react';
 
-const Card = ({transcript}) => {
+const Card = ({transcript, handleInput, backgroundImage}) => {
+    // console.log(backgroundImage)
+    // console.log({"backgroundImage":backgroundImage})
     return (
-        <div id = "Card">
-            <p id = 'recording-transcript' > {transcript} </p>
+        <div id = "Card" style = {{"backgroundImage":backgroundImage}}>
+            <p id = 'recording-transcript' onChange = {handleInput} contentEditable={true} suppressContentEditableWarning={true}> {transcript} </p>
         </div>
     )
 }

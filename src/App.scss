@@ -27,7 +27,8 @@
 
 @font-face {
   font-family: 'vendor';
-  src: url('https://static1.squarespace.com/static/5fcc32ac190b057dd3728887/t/5fcdd4a35d2e6f3bda5e7454/1607324836889/font.woff'); }
+  src: url('https://static1.squarespace.com/static/5fcc32ac190b057dd3728887/t/5fcdd4a35d2e6f3bda5e7454/1607324836889/font.woff'); 
+}
 
 * {
   box-sizing: border-box;
@@ -100,10 +101,10 @@ h1 {
   background-position: center center;
 }
 
+
+
 #recording-transcript {
   font-family: 'MyFont';
-  // font-family: "handwriting", "MyFont2", sans-serif;
-  // font-family: 'Ubuntu Light', 'Century Gothic', sans-serif;
   display: flex;
   color:black;
   background-color: transparent;
@@ -124,10 +125,10 @@ h1 {
   display:flex;
   justify-content:center;
   align-items: center;
-  top: 531px;
-  left: 1134px;
-  height:50px;
-  width: 50px;
+  top: 580px;
+  left: 1170px;
+  height:48px;
+  width: 48px;
   margin-left: 80px;
   background-image: url("images/microphone_off.jpg");
   background-size:     cover;                      
@@ -170,3 +171,18 @@ h1 {
   margin-bottom: 10px;
 }
 
+#select-occasion {
+  font-size: 16px;
+}
+
+.dropdown {
+  height:50px;
+  margin-left: -230px;
+}
+
+.dropdown-content {
+  font-size: 1.2em;
+  box-shadow: 0px 1px 6px 1px #181818;
+  text-shadow: 1px 1px 3px #181818;
+  background: radial-gradient(circle, rgba(147,143,143,1) 16%, rgba(115,114,114,1) 78%);
+}

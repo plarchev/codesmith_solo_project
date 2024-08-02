@@ -12,6 +12,7 @@
 import React, { useState, useEffect } from 'react';
 import Card from '../components/Card.jsx';
 import RecordSpeechButton from '../components/RecordSpeechButton.jsx';
+import ChooseCardDropdown from '../components/ChooseCardDropdown.jsx';
 import SpeechRecognition, { useSpeechRecognition } from 'react-speech-recognition';
 
 
@@ -20,6 +21,9 @@ const CardContainer = () => {
     const [microphoneText, setmicrophoneText] = useState('Start Recording'); // tracks inner text of recording button
     const [micOnOpacity, setMicOnOpacity] = useState('0%');
     const [micOffOpacity, setMicOffOpacity] = useState('100%');
+    const [story, setStory] = useState("");
+    const [cardVal, setCardVal] = useState('Birthday-card');
+    const [backgroundImage, setBackgroundImage] = useState('');
 
     // speech recognition invocation
     const {
@@ -48,10 +52,23 @@ const CardContainer = () => {
         }
       }
 
-    //   const handleInput = (e) => {
-    //     console.log(transcript)
-    //     transcript += e.currentTarget.textContent; 
-    //   }
+      // manually edit the transcript - note that these changes don't persist once you start talking again!!!!
+      const handleInput = (e) => {
+        useEffect(() => {
+            setStory(transcript);
+          }, [transcript]);
+      }
+
+      const handleDropdown = (event) => {
+        if (event.target.value == 'Birthday-Card') {
+            setBackgroundImage('url("' + 'https://www.dayspring.com/media/catalog/product//8/6/86067-1401_alt1_1_1.jpg' + '")')
+        } else if (event.target.value == 'Christmas-Card') {
+            setBackgroundImage('url("' + "https://printthistoday.com/wp-content/uploads/2021/08/free-printable-christmas-card-1-1056x675.png" + '")')
+        } else if (event.target.value == 'Valentines-Day-Card') {
+            setBackgroundImage('url("' + "https://printthistoday.com/wp-content/uploads/2023/01/free-printable-valentines-day-cards-for-teachers-1-1123x675.png" + '")')
+        } 
+        setCardVal(event.target.value); // update state of dropdown value
+      }
 
       // edit styling of button on click
       const buttonStyle = {
@@ -71,7 +88,9 @@ const CardContainer = () => {
     <div id = 'CardContainer'>
         <Card 
         transcript = {transcript}
-        // handleInput = {handleInput}
+        handleInput = {handleInput}
+        backgroundImage = {backgroundImage}
+        onChange={(e) => setStory(e.target.value)}
         /> 
         <RecordSpeechButton 
         listening = {listening}
@@ -81,6 +100,10 @@ const CardContainer = () => {
         buttonStyle = {buttonStyle}
         micOnStyle = {micOnStyle}
         micOffStyle = {micOffStyle}
+        />
+        <ChooseCardDropdown 
+        value = {cardVal}
+        handleDropdown = {handleDropdown}
         />
     </div>
     )
